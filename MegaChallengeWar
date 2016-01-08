@@ -1,0 +1,32 @@
+public class Card
+    {
+        public int CardValue { get; set; }
+        public int Suit { get; set; }
+
+        public static string ConvertCardToText(int cardValue, int suit)
+        {
+            string _card = "";
+            _card += convertValue(cardValue) + " of ";
+            _card += convertSuit(suit);
+            return _card;
+        }
+        private static string convertValue(int _cardValue)
+        {   
+            string _cardTemp = "";
+            if (_cardValue == 14) _cardTemp += "Ace";
+            else if (_cardValue == 13) _cardTemp += "King";
+            else if (_cardValue == 12) _cardTemp += "Queen";
+            else if (_cardValue == 11) _cardTemp += "Jack";
+            else _cardTemp=_cardValue.ToString();
+            return _cardTemp;
+        }
+        private static string convertSuit(int _suit)
+        {
+            string _cardTemp="";
+            if (_suit == 3) _cardTemp += "Spades";
+            else if (_suit == 2) _cardTemp += "Clubs";
+            else if (_suit == 1) _cardTemp += "Diamonds";
+            else _cardTemp += "Hearts";
+            return _cardTemp;
+        }
+    }
